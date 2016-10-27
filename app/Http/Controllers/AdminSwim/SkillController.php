@@ -31,7 +31,7 @@ class SkillController extends Controller
         //$skills = Skill::CardId($id)->get();
         return view('skill.index',compact('card'));
     }
-    public function create($id,Request $request)
+    public function create($id)
     {
         
         return view('skill.create',['id' => $id]);

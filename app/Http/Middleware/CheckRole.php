@@ -20,8 +20,11 @@ class CheckRole
         $roles = $this->getRequiredRoleForRoute($request->route());
         // Check if a role is required for the route, and
         // if so, ensure that the user has that role.
-        if ($request->user()->hasRole($roles) || !$roles) {
-            return $next($request);
+        foreach($roles as $role)
+        {
+            if ($request->user()->hasRole($role) || !$role) {
+                return $next($request);
+            }
         }
 
         return response([

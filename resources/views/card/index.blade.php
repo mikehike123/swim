@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.bootstrap')
 @section('pageTitle', 'Skill Cards')
 @section('content')
         <div class = 'container'>

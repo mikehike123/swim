@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateSkillsTable extends Migration
 {
@@ -13,17 +12,16 @@ class CreateSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('skills', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('skill');
-            $table->integer('card_id')->unsigned();
+            $table->integer('skill_card_id')->unsigned();
+            $table->string('name');
             $table->timestamps();
 
-            $table->foreign('card_id')
+            $table->foreign('skill_card_id')
                 ->references('id')
-                ->on('cards')
+                ->on('skill_cards')
                 ->onDelete('cascade');
-
         });
     }
 
@@ -34,6 +32,6 @@ class CreateSkillsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('skills');
     }
 }

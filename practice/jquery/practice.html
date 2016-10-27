@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        .opt1.ui-radio-on {
+            background-color: red !important;
+        }
+        .opt2.ui-radio-on {
+            background-color: yellow !important;
+            color:black !important;
+        }
+        .opt3.ui-radio-on {
+            background-color: green !important;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <form>
+    
+        <fieldset data-role="controlgroup" data-type="horizontal">
+        
+            <legend>Horizontal:</legend>
+        
+            <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked" class="opt1" data-opt="1">
+            <label for="radio-choice-h-2a" class="opt1">One</label>
+        
+            <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off" data-opt="2">
+            <label for="radio-choice-h-2b" class="opt2">Two</label>
+        
+            <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other" data-opt="3">
+            <label for="radio-choice-h-2c" class="opt3">Three</label>
+            </fieldset>
+    </form>
+
+    <script>
+        $("input[type='radio']").click(function() {
+            myData = $(this).data();
+            //alert(myData.opt);
+        });
+
+    </script>
+</body>
+
+</html>
